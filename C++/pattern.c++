@@ -34,19 +34,75 @@
 //     return 0;
 // }
 
+// #include <iostream>
+// using namespace std;
+
+// int main(){
+//     int num, i, j, count = 0;
+//     cout << "Enter a number: ";
+//     cin >> num;
+
+//     for (i = 1; i <= num; i++){
+//         for (j = 1; j <= num; j++){
+//             cout << j+count << " ";
+//         }
+//         count += 5;
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// int main(){
+//     int row, column, i, j, count = 1;
+//     cout << "Enter number of row: ";
+//     cin >> row;
+//     cout << "Enter number of column: ";
+//     cin >> column;
+
+//     for (i = 0; i < row; i++){
+//         for (j = 0; j < column; j++){
+//             cout << count++ << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// int main(){
+//     int num, i, j;
+
+//     cout << "Enter a number: ";
+//     cin >> num;
+
+//     for (i = 0; i < num; i++){
+//         for (j = 0; j < i+1; j++){
+//             cout << "* ";
+//         }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
 #include <iostream>
 using namespace std;
 
 int main(){
-    int num, i, j, count = 0;
+    int i, j, num;
+
     cout << "Enter a number: ";
     cin >> num;
 
-    for (i = 1; i <= num; i++){
-        for (j = 1; j <= num; j++){
-            cout << j+count << " ";
+    for (i = 0; i < num; i++){
+        for (j = 0; j <= i; j++){
+            cout << i+1 << " ";
         }
-        count += 5;
         cout << endl;
     }
     return 0;
