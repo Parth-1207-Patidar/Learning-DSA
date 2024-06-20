@@ -201,23 +201,44 @@
 //     return 0;
 // }
 
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-int main(){
-    int i, j, num;
+// int main(){
+//     int i, j, num;
 
-    cout << "Enter a number: ";
-    cin >> num;
+//     cout << "Enter a number: ";
+//     cin >> num;
 
-    for (i = 0; i<num; i++){
-        for (j = num - i; j < num; j++){
-            cout << "  ";
-        }
-        for (j=num; j>i; j--){
-            cout << "* ";
-        }
-        cout << endl;
-    }
-    return 0;
-}
+//     for (i = 0; i<num; i++){
+//         for (j = num - i; j < num; j++){
+//             cout << "  ";
+//         }
+//         for (j=num; j>i; j--){
+//             cout << "* ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// int main(){
+//     int i, j, num;
+
+//     cout << "Enter a number: ";
+//     cin >> num;
+
+//     for (i = 0; i<num; i++){
+//         for (j = 0; j < i; j++){
+//             cout << "  ";
+//         }
+//         for (j = i + 1; j <= num; j++){
+//             cout << j << " ";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
