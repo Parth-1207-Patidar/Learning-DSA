@@ -159,26 +159,26 @@
 //     return 0;
 // }
 
-// #include <iostream>
-// using namespace std;
+#include <iostream>
+using namespace std;
 
-// int main(){
-//     int i, j, num;
+int main(){
+    int i, j, num;
 
-//     cout << "Enter a number: ";
-//     cin >> num;
+    cout << "Enter a number: ";
+    cin >> num;
 
-//     for (i = 0; i<num; i++){
-//         for (j = num; j > i; j--){
-//             cout << "  ";
-//         }
-//         for (j=0; j<i+1; j++){
-//             cout << "* ";
-//         }
-//         cout << endl;
-//     }
-//     return 0;
-// }
+    for (i = 0; i<num; i++){
+        for (j = num; j > i; j--){
+            cout << "  ";
+        }
+        for (j=0; j<i+1; j++){
+            cout << "* ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
 
 // #include <iostream>
 // using namespace std;
