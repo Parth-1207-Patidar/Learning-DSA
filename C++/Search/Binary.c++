@@ -19,38 +19,62 @@ void inputArray(int arr[], int size){
 
 
 int binarySearch(int arr[], int size){
-    int key, low = 0, high = size - 1;
-    cout << "Enter the target value: ";
+    int key, low, mid, high;
+    low = 0;
+    high = size - 1;
+
+    cout << "Enter a target value: ";
     cin >> key;
 
     while (low <= high){
-
-        int mid = (low + high) / 2;
+        mid = (low + high) / 2;
         if (arr[mid] == key){
+            cout << "Index of target value is: ";
             return mid;
         }
         else if (arr[mid] < key){
-            low = mid;
+            low = mid + 1;
         }
         else{
-            high = mid;
+            high = mid - 1;
         }
     }
+
+    cout << "Index of target value is: ";
     return -1;
+}
+
+void sortArray(int arr[], int size){
+    int i, j, temp;
+
+    for (i=0; i<size; i++){
+        for (j=0; j<size; j++){
+            if (arr[i] < arr[j]){
+
+                temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
+            }
+        }
+    }
 }
 
 
 int main(){
     int size;
-    cout << "Enter the size of the array: ";
+
+    cout << "Enter the size of array: ";
     cin >> size;
 
     int arr[size];
 
     inputArray(arr, size);
     printArray(arr, size);
+    sortArray(arr, size);
+    cout << endl << "Sorted Array: ";
+    printArray(arr, size);
+    cout << endl << binarySearch(arr, size) << endl;
 
-    cout << binarySearch(arr, size);
 
     return 0;
 }
