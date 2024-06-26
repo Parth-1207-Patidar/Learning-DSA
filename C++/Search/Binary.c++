@@ -27,7 +27,7 @@ int binarySearch(int arr[], int size){
     cin >> key;
 
     while (low <= high){
-        mid = (low + high) / 2;
+        mid = low + (high-low) / 2;
         if (arr[mid] == key){
             cout << "Index of target value is: ";
             return mid;
