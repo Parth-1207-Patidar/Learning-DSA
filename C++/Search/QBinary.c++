@@ -182,15 +182,65 @@ int searchRotated(int arr[], int size, int key){
 }
 
 
+long long int squareRoot(int number){
+    long long int low = 0, high = number/2;
+    long long int mid, square, squareplus1;
+
+    while (low <= high){
+        if (number == 1){
+            return 1;
+        }
+        
+        mid = low + (high - low) / 2;
+        square = mid * mid;
+        squareplus1 = (mid+1)*(mid+1);
+        
+        if (square <= number && squareplus1 > number){
+            return mid;
+        }
+        else if (square > number){
+            high = mid - 1;
+        }
+        else{
+            low = mid + 1;
+        }
+
+    }
+    return -1;
+}
+
+double squareRootDecimal(int number, double precision){
+    double ans = squareRoot(number);
+    double newans, factor = 1;
+
+    for (int j = 0; j < precision; j++){
+        factor = factor / 10;
+        for (double i = ans; i*i <= number; i += factor){
+            newans = i;
+        }
+    }
+
+    // for (double i = 0.000; i <= 0.999; i += 0.001){
+    //     if ((ans+i)*(ans+i) <= number){
+    //         newans = ans + i;
+    //     }
+    //     else{
+    //         break;
+    //     }
+    // }
+    return newans;
+}
+
+
 int main(){
     int size, key;
-    cout << "Enter size of array: ";
-    cin >> size;
+    // cout << "Enter size of array: ";
+    // cin >> size;
 
-    int arr[size];
+    // int arr[size];
 
-    inputArray(arr, size);
-    printArray(arr, size);
+    // inputArray(arr, size);
+    // printArray(arr, size);
 
     // sortArray(arr, size);
     // cout << "Sorted Array: ";
@@ -205,7 +255,9 @@ int main(){
     // cout << "Peak Element: " << peakElement(arr, size) << endl;
     // cout << "Pivot Element: " << pivotElement(arr, size) << endl;
 
-    cout << "Search in Rotated array: " << searchRotated(arr, size, key) << endl;
+    // cout << "Search in Rotated array: " << searchRotated(arr, size, key) << endl;
+
+    cout << "Square root of the number: " << squareRootDecimal(key, 3) << endl;
 
     return 0;
 }
