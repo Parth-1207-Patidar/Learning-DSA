@@ -34,7 +34,7 @@ struct stack{
             cout << "Stack Underflow" << endl;
             return;
         }
-        cout << arr[top] << endl;
+        cout << "Popped Item: " << arr[top] << endl;
         top--;
     }
 
