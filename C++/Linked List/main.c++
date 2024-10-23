@@ -71,7 +71,7 @@ Node* deleteAtEnd(Node* &head){
         temp = temp -> next;
     }
     previous -> next = nullptr;
-    delete temp;
+    delete temp; // temp itself is the last node now
 
     return head;
 }
