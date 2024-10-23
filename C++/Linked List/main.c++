@@ -1,60 +1,82 @@
 #include <iostream>
 using namespace std;
 
-
 struct Node{
     int data;
-    Node *next;
-
-    Node(int data){
-        this -> data = data;
-        this -> next = NULL;
-    }
-
+    Node* next;
 };
 
-void insertAtHead(Node* &head, int data){
-    Node *temp = new Node(data);
-    temp -> next = head;
-    head = temp;
+Node* insertAtBeginning(Node* &head, int value){
+    Node* newNode = new Node();
+    newNode -> data = value;
+    newNode -> next = head;
+    head = newNode;
+
+    return head;
 }
 
-void insertAtTail(Node * &tail, int data){
-    Node *temp = new Node(data);
-    tail -> next = temp;
-    tail = tail -> next;
-}
+Node* insertAtEnd(Node* &head, int value){
+    Node* newNode = new Node();
+    newNode -> data = value;
+    Node* temp = head;
 
-void printLinkedList(Node* &head){
-    Node *temp = head;
-    while (temp != NULL){
-        cout << temp -> data << " ";
+    while(temp -> next != NULL){
         temp = temp -> next;
     }
-    cout << endl;
+
+    temp -> next = newNode;
+
+    return head;
+}
+
+Node* insertAtPosition(Node* &head, int value, int position){
+    int index = 0;
+    if (position == 0){
+        return insertAtBeginning(head, value);
+    }
+
+    Node* newNode = new Node();
+    newNode -> data = value;
+    Node* temp = head;
+    Node* previous = NULL;
+
+    while (index != position && temp != NULL){
+        previous = temp;
+        temp = temp -> next;
+        index++;
+    }
+
+    previous -> next = newNode;
+    newNode -> next = temp;
+
+    return head;
+}
+
+Node* deleteAtBeginning(Node* &head){
+    Node* toDelete = head;
+    head = head -> next;
+
+    delete toDelete;
+
+    return head;
 }
 
 
+Node* deleteAtEnd(Node* &head){
+    Node* temp = head;
+    Node* previous = nullptr;
+
+    while (temp -> next != NULL){
+        previous = temp;
+        temp = temp -> next;
+    }
+    previous -> next = nullptr;
+    delete temp;
+
+    return head;
+}
+
 int main(){
-
-    Node *node1 = new Node(111);
-    // cout << node1 -> data << endl;
-    // cout << node1 -> next << endl;
-
-    Node *head = node1;
-    Node *tail = node1;
-
-    for (int i = 0; i < 10; i++){
-        insertAtHead(head, i);
-    }
-    printLinkedList(head);
-
-    for (int i = 0; i < 10; i++){
-        insertAtTail(tail, i);
-    }
-
-    printLinkedList(head);
-
-
+    
     return 0;
 }
