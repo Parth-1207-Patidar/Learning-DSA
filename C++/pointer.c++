@@ -35,7 +35,7 @@ int main(){
     // // Print the address of the first element of array 'arr'
     // cout << "Address of arr[0]: " << &arr[0] << endl;
 
-    // // Print the value of array 'arr'
+    // // Print the value of array 'arr'WQ2
     // cout << "Value of arr: " << arr << endl;
 
     cout << "Address of first element of array 'arr': " << &arr[0] << endl;
